@@ -43,17 +43,18 @@ All users are parkers, but can also be hosts
 
 ### Wireframes
 
-- Login/Signup
-
 - SplashPage
-
+  [SplashPage](http://res.cloudinary.com/ddgt25kwb/image/upload/v1507495089/flex/Logged-off-home_irlmqe.png)
+- Login
+  [Login](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495089/flex/Logged-off-login_neo5ze.png)
 - Find Stop Page (Stop Index with map)
-
-- Host Upload Spot Page (Form)
-
-- Spot Show Page (Stop Show)
-
-- Make Reservation Page (Reservation Form)
+  [homepage](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495089/flex/Logged-in-home_kqfshq.png)
+- Host spots index (Index)
+  [stop index](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495090/flex/Logged-in-share_qxmxey.png)
+- Create Page (Create form)
+  [create stop](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495090/flex/Logged-in-share-form_z8v41t.png)
+- User Profile Page
+  [user profile info](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495089/flex/Logged-in-profile_vaktp7.png)
 
 ## Group Members & Work Breakdown
 
@@ -99,21 +100,29 @@ This mobile iOS applicaiton will be built using the following technologies:
 
 ## Technology Details
 
-[React Native]()
+[React Native](https://facebook.github.io/react-native/)
+- React Native is the mobile implementation of react.
 
-[Expo]()
+[Expo](https://expo.io/)
+- Expo is a developement and deployment platform for react native apps.
 
-[ReactJS]()
+[ReactJS](https://reactjs.org/)
+- Its react.
 
-[Apollo Client]()
+[Apollo Client](http://dev.apollodata.com/)
+- A front end graphql network client for interacting with graphql endpoint.
 
-[GraphQL]()
+[GraphQL](http://graphql.org/)
+- An alternative to restful apis.  GraphQL provides a data layer and query language which allows for clients to request data from a single endpoint.
 
-[Ruby on Rails]()
+[Ruby on Rails](http://rubyonrails.org/)
+- A MVC framework to build the backends of applications.
 
-[PostgreSQL]()
+[PostgreSQL](https://www.postgresql.org/)
+- A RDBMS.
 
-[AWS]()
+[AWS](https://aws.amazon.com/)
+- Cloud based computing and data storage services.
 
 ## Implementation Timeline
 
@@ -151,6 +160,6 @@ This mobile iOS applicaiton will be built using the following technologies:
 
 ## Plan for getting users and reviews
 
-- all members will share app with at least 20 friends and family members
-- John will post in an appropriate sub-reddit and Product Hunt for exposure
-- Drew and Eric will submit the app for review on the App Store
+- all members will share app with at least 20 friends and family members.
+- John will post in an appropriate sub-reddit and Product Hunt for exposure.
+- Drew and Eric will submit the app for review on the App Store.
