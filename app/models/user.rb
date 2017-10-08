@@ -1,9 +1,24 @@
 
 class User < ApplicationRecord
+  after_initialize :ensure_session_token, :ensure_avatar, :ensure_password_if_fb
+
+  def ensure_session_token
+    self.session_token ||= SecureRandom.urlsafe_base64
+  end
+
+  def ensure_avatar
+    self.avatar_url ||= 'http://res.cloudinary.com/dfafbqoxx/image/upload/v1506546644/blank_user_oltxpb.png'
+  end
+
+  def ensure_password_if_fb
+    if self.fb_id
+      self.password ||= SecureRandom.urlsafe_base64
+    end
+  end
+
   validates :username, :password_digest, :session_token, presence: true
   validates :username, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
-  after_initialize :ensure_session_token
   attr_reader :password
 
   def self.find_by_credentials(username, password)
@@ -22,10 +37,6 @@ class User < ApplicationRecord
 
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
-  end
-
-  def ensure_session_token
-    self.session_token ||= SecureRandom.urlsafe_base64
   end
 
   def reset_session_token!
