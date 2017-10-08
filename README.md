@@ -44,17 +44,17 @@ All users are parkers, but can also be hosts
 ### Wireframes
 
 - SplashPage
-  [SplashPage](http://res.cloudinary.com/ddgt25kwb/image/upload/v1507495089/flex/Logged-off-home_irlmqe.png)
+  ![SplashPage](http://res.cloudinary.com/ddgt25kwb/image/upload/v1507495089/flex/Logged-off-home_irlmqe.png)
 - Login
-  [Login](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495089/flex/Logged-off-login_neo5ze.png)
+  ![Login](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495089/flex/Logged-off-login_neo5ze.png)
 - Find Stop Page (Stop Index with map)
-  [homepage](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495089/flex/Logged-in-home_kqfshq.png)
+  ![homepage](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495089/flex/Logged-in-home_kqfshq.png)
 - Host spots index (Index)
-  [stop index](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495090/flex/Logged-in-share_qxmxey.png)
+  ![stop index](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495090/flex/Logged-in-share_qxmxey.png)
 - Create Page (Create form)
-  [create stop](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495090/flex/Logged-in-share-form_z8v41t.png)
+  ![create stop](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495090/flex/Logged-in-share-form_z8v41t.png)
 - User Profile Page
-  [user profile info](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495089/flex/Logged-in-profile_vaktp7.png)
+  ![user profile info](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495089/flex/Logged-in-profile_vaktp7.png)
 
 ## Group Members & Work Breakdown
 
