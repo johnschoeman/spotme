@@ -105,6 +105,10 @@ This mobile iOS applicaiton will be built using the following technologies:
 - PostgreSQL
 - AWS
 
+Techincal challenges include:
+ - Incorporation of two new technologies React Native and GraphQL
+ - Learning to navigate the iOS native ecosystem
+
 ## Technology Details
 
 [React Native](https://facebook.github.io/react-native/)
@@ -131,39 +135,49 @@ This mobile iOS applicaiton will be built using the following technologies:
 [AWS](https://aws.amazon.com/)
 - Cloud based computing and data storage services.
 
+## Thing Accomplished over the weekend
+
+- Successfully initializing a new react native app with expo
+- Researching and familiarizing the group with a stable react native dependency tree
+- Successfully quering a GraphQL DB with react native using apollo client
+- Successfully writing to a GraphQL DB with react native using apoll client
+- Deeply researching OAuth
+- Setting up a rails back end with basic authentication.
+- Setting up a graphcool DB as a service back end for initial development
+
 ## Implementation Timeline
 
 #### Phase 1: Learn Technologies (2days)
 - Objective: over the weekend all members will research and understand the new technologies of React Native and GraphQL and become familiar of the overall workflow.
 - By the end of Sunday we will have:
-  - A completed proposal readme
-  - An understanding Of React Native and GraphQL
-  - A working (though lacking features) React Native App with Apollo Client with basic read and write abilites to a graphcool backend
-  - An understanding of how to implement OAuth with react native and graphql
+  - A completed proposal readme - John
+  - An understanding Of React Native and GraphQL - ALL
+  - A working (though lacking features) React Native App with Apollo Client with basic read and write abilites to a graphcool backend - Drew and John
+  - An understanding of how to implement OAuth with react native and graphql - Eric and Jose
 
 #### Phase 2: Backbone (3days)
 - Objective have a working basic app with full user authentication, basic page navigation, connection to rails backend with graphql server acting as a data layer.
 - Phase 2a:
-  - Have Authentication completed via React Native and Auth0 API
-  - Users can sign up/login and have sessions persist unless logged out
+  - Have Authentication completed via React Native and Auth0 API - Eric and Jose
+  - Users can sign up/login and have sessions persist unless logged out - Eric and Jose
 - Phase 2b:
-  - Have basic page navigation
-  - Users can access spot creation form, spot index form, make reservation form pages.
-- Phase 2c:"
-  - Have a graphql end point available from rails backend
-  - have the ability to read and write to the backend database
+  - Have basic page navigation - Drew
+  - Users can access spot creation form, spot index form, make reservation form pages. - Drew
+- Phase 2c:
+  - Have a graphql end point available from rails backend - John
+  - have the ability to read and write to the backend database - John
 
 #### Phase 3: MVP Features (4days)
 - Objective have a working mvp app with spot crud, resevation crud, and sufficient styling.
 - Phase 3a:
-  - Have Spot Creation Feature Completed
-  - Users and input spot data into a form and have the data persist to the DB
+  - Have Spot Creation Feature Completed - Drew
+  - Users and input spot data into a form and have the data persist to the DB - Eric
 - Phase 3b:
-  - Have Spot Index Feature Completed
-  - Users and see all nearby spots on a Google map
+  - Have Spot Index Feature Completed - John
+  - Users and see all nearby spots on a Google map - Jose
 - Phase 3c:
-  - Have Reservation Feature Completed
-  - Users can select a spot and time and reserve a spot.
+  - Have Reservation Feature Completed - TBD
+  - Users can select a spot and time and reserve a spot. -TBD
 
 ## Plan for getting users and reviews
 
