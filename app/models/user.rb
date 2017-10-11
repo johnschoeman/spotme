@@ -15,6 +15,7 @@
 #
 
 class User < ApplicationRecord
+  has_secure_password
   after_initialize :ensure_session_token, :ensure_avatar, :ensure_password_if_fb
 
   def ensure_session_token
