@@ -14,10 +14,16 @@
 #  email           :string           not null
 #
 
-require 'test_helper'
+Types::UserType = GraphQL::ObjectType.define do
+  name 'User'
 
-class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  field :id, !types.ID
+  field :username, !types.String
+  field :session_token, !types.String
+  field :avatrar_url, types.String
+  field :fb_name, types.String
+  field :fb_id, types.String
+  field :email, !types.String
+
+  # Add datetype here
 end
