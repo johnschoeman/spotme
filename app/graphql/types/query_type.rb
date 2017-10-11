@@ -6,4 +6,8 @@ Types::QueryType = GraphQL::ObjectType.define do
   field :allUsers, !types[Types::UserType] do
     resolve -> (obj, args, ctx) { User.all }
   end
+
+  field :allSpots, !types[Types::SpotType] do
+    resolve -> (obj, args, ctx) { Spot.all }
+  end
 end
