@@ -11,5 +11,12 @@ Types::QueryType = GraphQL::ObjectType.define do
   #   resolve -> (obj, args, ctx) { Spot.all }
   # end
 
+  # field :getStop, !types[Types::SpotType] do
+  #   argument :spotId, !types.Int
+  #   resolve -> (obj, args, ctx) { 
+  #     Spot.find(args[:spotId])
+  #   }
+  # end
+
   field :allSpots, function: Resolvers::SpotsSearch
 end
