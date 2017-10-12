@@ -10,9 +10,9 @@ class GraphqlController < ApplicationController
     result = SpotmeSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
     render json: result
   end
-
+  
   private
-
+  
   def current_user
     return unless session[:token]
 

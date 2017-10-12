@@ -10,7 +10,6 @@ class Resolvers::SignInUser < GraphQL::Function
 
   def call(_obj, args, ctx)
     input = args[:email]
-
     returns unless input
 
     user = User.find_by email: input[:email]
