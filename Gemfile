@@ -33,6 +33,9 @@ gem 'rails_12factor'
 
 gem 'graphql'
 
+gem 'search_object'
+gem 'search_object_graphql'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
