@@ -8,12 +8,17 @@ class Resolvers::UpdateSpot < GraphQL::Function
   argument :rating, types.Float
   argument :price, types.Float
   argument :description, types.String
+  argument :number, types.String
+  argument :street, types.String
+  argument :city, types.String
+  argument :state, types.String
 
   type Types::SpotType
 
   def call(obj, args, ctx)
     spot = Spot.find(args[:spotId])
-    if ctx[:current_user] == spot.user
+    # if ctx[:current_user] == spot.user
+    if User.first == spot.user
       params = args.to_h
       params.delete("spotId")
       spot.update(
