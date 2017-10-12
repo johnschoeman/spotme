@@ -12,6 +12,12 @@
 #  description :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  user_id     :integer
+#  street      :string
+#  city        :string
+#  state       :string
+#  zip         :string
+#  number      :string
 #
 
 require 'test_helper'

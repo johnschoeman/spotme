@@ -24,6 +24,10 @@ What is the best whay to implement dateTime with graphql server?
 is there not a better way to input type arguments?  currently you need to write them in three different places.
 
 ---
+
+How do you allow nested types in queries?
+
+___ 
 ### Bugs
 
 Do not forget to set the context of the gql server in the graphql controller.
