@@ -10,6 +10,7 @@ class Resolvers::CreateSpot < GraphQL::Function
   type Types::SpotType
 
   def call(obj, args, ctx)
+
     Spot.create!(
       latitude: args[:latitude],
       longitude: args[:longitude],
@@ -23,3 +24,10 @@ class Resolvers::CreateSpot < GraphQL::Function
   end
 
 end
+
+# address: {
+#   +    //       street: '1725 Tehama St',
+#   +    //       city: 'San Francisco',
+#   +    //       state: 'CA',
+#   +    //       zip: '94112'
+#   +    //     }
