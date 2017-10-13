@@ -35,13 +35,15 @@ gem 'graphql'
 
 gem 'search_object'
 gem 'search_object_graphql'
-gem 'figaro'
 
 gem 'http'
 gem 'figaro'
 gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+gem 'pry-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
