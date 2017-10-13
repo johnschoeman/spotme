@@ -1,8 +1,8 @@
 class Resolvers::SocialSignin < GraphQL::Function
-  argument :email, !types.string
+  argument :email, !types.String
   
   type do
-    name 'SigninPayload'
+    name 'SocialSigninPayload'
     
     field :token, types.String
     field :user, Types::UserType

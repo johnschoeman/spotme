@@ -85,6 +85,14 @@ class Resolvers::GetFBToken < GraphQL::Function
 end
 ```
 
+look into OpenStruct:
+```ruby
+OpenStruct.new({
+      user: user,
+      token: token
+    })
+```
+
 ----
 
 ```ruby
@@ -119,5 +127,12 @@ end
 
 parameters passed into mutations from the front end in the variables hash must me in the same case as the arguments of the resolvers!
 
+
+----
+
+gql not being able to find a resolver you defined
+```
+NameError (uninitialized constant Resolvers::SocialSignin):
+```
 
 ----
