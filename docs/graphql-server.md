@@ -158,3 +158,11 @@ on heroku
 2017-10-13T17:51:34.209449+00:00 app[web.1]: Did you mean?  Http
 2017-10-13T17:51:34.209450+00:00 app[web.1]:                HTTP):
 ```
+verify you have 
+ ```
+require 'uri'
+require 'net/http'
+```
+in your http calls.
+
+----
