@@ -10,7 +10,6 @@ class Resolvers::CreateSpot < GraphQL::Function
   type Types::SpotType
 
   def call(obj, args, ctx)
-    user = User.first
     # address = args[:address] ? args[:address] : {}
     address_response = request_address(args[:address])
     address_hash = parse_address_response(address_response)
@@ -27,7 +26,7 @@ class Resolvers::CreateSpot < GraphQL::Function
       city: address_hash[:city],
       state: address_hash[:state],
       zip: address_hash[:zip],
-      user: user
+      user: ctx[:current_user]
       )
     end
 
@@ -58,7 +57,7 @@ class Resolvers::CreateSpot < GraphQL::Function
 
 end
 
-  # user: ctx[:current_user]
+
 # address: {
 #   +    //       street: '1725 Tehama St',
 #   +    //       city: 'San Francisco',
