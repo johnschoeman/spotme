@@ -16,5 +16,8 @@ Types::SpotType = GraphQL::ObjectType.define do
   field :address_zip, types.String, property: :zip
 
   field :hostedBy, -> { Types::UserType }, property: :user
-  field :host_id, types.Int, property: :user_id
+  field :host_id, types.ID, property: :user_id
+
+  field :created_at, !Types::DateTimeType, property: :created_at
+  field :updated_at, !Types::DateTimeType, property: :updated_at
 end
