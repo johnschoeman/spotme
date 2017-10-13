@@ -33,7 +33,7 @@ class Resolvers::CreateSpot < GraphQL::Function
 
     def request_address(address)
       address = address.gsub(' ', '+')
-      HTTP.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{address}&key=AIzaSyDPfED30zb43xb9WYh_qSkgltxoaLnsVqM")
+      HTTP.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{address}&key=#{ENV["GOOGLE_MAPS_API_KEY"]}")
     end
 
     def parse_address_response(address_response)
