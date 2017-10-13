@@ -15,9 +15,6 @@
 #
 
 class User < ApplicationRecord
-  has_many :reservations
-  has_many :spots
-
   has_secure_password
   after_initialize :ensure_session_token, :ensure_avatar, :ensure_password_if_fb
 
@@ -39,6 +36,10 @@ class User < ApplicationRecord
   # validates :username, uniqueness: true
   validates :email, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
+
+  has_many :reservations
+  has_many :spots
+  
   attr_reader :password
 
   def self.find_by_credentials(username, password)
