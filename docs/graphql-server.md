@@ -143,3 +143,9 @@ graphql/resovers/sign_in_social.rb
 NameError (uninitialized constant Resolvers::SignInSocial):
 ```
 ----
+
+#<ActionDispatch::Request::Session:0x7fb3be4d4f30 not yet loaded>
+(byebug) session[:token]
+nil
+
+----
