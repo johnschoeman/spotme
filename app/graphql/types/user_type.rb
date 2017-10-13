@@ -24,6 +24,8 @@ Types::UserType = GraphQL::ObjectType.define do
   field :fb_name, types.String
   field :fb_id, types.String
   field :email, !types.String
+  field :created_at, Types::DateTimeType
+  field :updated_at, Types::DateTimeType
 
-  # Add datetype here
+  field :spots, -> { types[Types::SpotType] }
 end
