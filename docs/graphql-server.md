@@ -85,4 +85,61 @@ class Resolvers::GetFBToken < GraphQL::Function
 end
 ```
 
+look into OpenStruct:
+```ruby
+OpenStruct.new({
+      user: user,
+      token: token
+    })
+```
+
+----
+
+```ruby
+  Parameters: {"query"=>"mutation GetFBTokenMutation($authorization_code: String!, $redirect_uri: String!) {\n  getFBToken(authorization_code: $authorization_code, redirect_uri: $redirect_uri) {\n    id_token\n    __typename\n  }\n}\n", "variables"=>{"authorizationCode"=>"oybRiV2t6DiCYx76", "redirectUri"=>"https://auth.expo.io/@john_schoeman/expo-auth0"}, "operationName"=>"GetFBTokenMutation", "graphql"=>{"query"=>"mutation GetFBTokenMutation($authorization_code: String!, $redirect_uri: String!) {\n  getFBToken(authorization_code: $authorization_code, redirect_uri: $redirect_uri) {\n    id_token\n    __typename\n  }\n}\n", "variables"=>{"authorizationCode"=>"oybRiV2t6DiCYx76", "redirectUri"=>"https://auth.expo.io/@john_schoeman/expo-auth0"}, "operationName"=>"GetFBTokenMutation"}}
+
+[6, 15] in /Users/johnschoeman/workspace/appacademy/aa_flex/spotme/app/controllers/graphql_controller.rb
+    6:     context = {
+    7:       session: session,
+    8:       current_user: current_user
+    9:     }
+   10:     debugger
+=> 11:     result = SpotmeSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
+   12:     render json: result
+   13:   end
+   14:
+   15:   private
+(byebug) query
+"mutation GetFBTokenMutation($authorization_code: String!, $redirect_uri: String!) {\n  getFBToken(authorization_code: $authorization_code, redirect_uri: $redirect_uri){\n    id_token\n    __typename\n  }\n}\n"
+(byebug) variables
+<ActionController::Parameters {"authorizationCode"=>"oybRiV2t6DiCYx76", "redirectUri"=>"https://auth.expo.io/@john_schoeman/expo-auth0"} permitted: false>
+(byebug) operation_name
+"GetFBTokenMutation"
+(byebug) context
+{:session=>#<ActionDispatch::Request::Session:0x7ff636114d18 not yet loaded>, :current_user=>nil}
+(byebug)
+
+```
+
+```ruby
+<ActionController::Parameters {"authorization_code"=>"oybRiV2t6DiCYx76", "redirect_uri"=>"https://auth.expo.io/@john_schoeman/expo-auth0"} 
+```
+
+parameters passed into mutations from the front end in the variables hash must me in the same case as the arguments of the resolvers!
+
+
+----
+
+gql not being able to find a resolver you defined
+
+this will not work:
+```
+graphql/resovers/sign_in_social.rb
+NameError (uninitialized constant Resolvers::SocialSignin):
+```
+the name of the resolver must match the name of the file
+```
+graphql/resovers/sign_in_social.rb
+NameError (uninitialized constant Resolvers::SignInSocial):
+```
 ----
