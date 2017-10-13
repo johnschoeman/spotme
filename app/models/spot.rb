@@ -22,6 +22,7 @@
 
 class Spot < ApplicationRecord
   belongs_to :user
+  has_many :reservations
 
   def address
     address_hash = {}
@@ -32,4 +33,5 @@ class Spot < ApplicationRecord
     # debugger
     return address_hash
   end
+
 end
