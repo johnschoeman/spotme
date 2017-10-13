@@ -38,7 +38,6 @@ gem 'search_object_graphql'
 gem 'figaro'
 
 gem 'http'
-
 gem 'figaro'
 
 # Use Capistrano for deployment
