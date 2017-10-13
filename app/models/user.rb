@@ -15,6 +15,9 @@
 #
 
 class User < ApplicationRecord
+  has_many :reservations
+  has_many :spots
+
   has_secure_password
   after_initialize :ensure_session_token, :ensure_avatar, :ensure_password_if_fb
 
@@ -61,4 +64,5 @@ class User < ApplicationRecord
     self.save!
     self.session_token
   end
+  
 end
