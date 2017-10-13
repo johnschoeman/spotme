@@ -53,7 +53,6 @@ class Resolvers::GetFBToken < GraphQL::Function
     request = Net::HTTP::Post.new(url)
     request["content-type"] = 'application/json'
     request.body = "{\"grant_type\":\"authorization_code\",\"client_id\": \"#{ENV["AUTH0_CLIENT_ID"]}\",\"client_secret\": \"#{ENV["AUTH0_CLIENT_SECRET"]}\",\"code\": \"#{authorization_code}\",\"redirect_uri\": \"#{redirect_uri}\"}"
-    conosle.log('request: ', request)
     puts 'request.body: '
     puts request.body
     puts "---"
