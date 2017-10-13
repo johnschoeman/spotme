@@ -9,4 +9,6 @@ Types::MutationType = GraphQL::ObjectType.define do
   field :deleteSpot, function: Resolvers::DeleteSpot.new
 
   field :getFBToken, function: Resolvers::GetFBToken.new
+  field :createUserSocial, function: Resolvers::CreateUserSocial.new
+  field :signinUserSocial, function: Resolvers::SocialSignin.new
 end
