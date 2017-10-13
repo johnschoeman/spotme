@@ -65,7 +65,6 @@ class Resolvers::GetFBToken < GraphQL::Function
     id_token = JSON.parse(response.body)["id_token"]
     fb_response = FBResponse.new
     fb_response.id_token = id_token
-    debugger
     fb_response
   end
 
@@ -81,7 +80,6 @@ class Resolvers::GetFBToken < GraphQL::Function
     request.body = "{\"grant_type\":\"authorization_code\",\"client_id\": \"#{ENV["AUTH0_CLIENT_ID"]}\",\"client_secret\": \"#{ENV["AUTH0_CLIENT_SECRET"]}\",\"code\": \"#{authorization_code}\",\"redirect_uri\": \"#{redirect_uri}\"}"
     
     response = http.request(request)
-    debugger
     response
   end
 end
