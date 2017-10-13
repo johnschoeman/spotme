@@ -9,9 +9,9 @@ class Resolvers::SignInSocial < GraphQL::Function
   end
 
   def call(_obj, args, ctx)
-    input = args[:email]
-    returns unless input
-    user = User.find_by email: input
+    email = args[:email]
+    returns unless email
+    user = User.find_by email: email
 
     return unless user
 

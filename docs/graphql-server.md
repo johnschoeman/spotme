@@ -131,8 +131,15 @@ parameters passed into mutations from the front end in the variables hash must m
 ----
 
 gql not being able to find a resolver you defined
+
+this will not work:
 ```
+graphql/resovers/sign_in_social.rb
 NameError (uninitialized constant Resolvers::SocialSignin):
 ```
-
+the name of the resolver must match the name of the file
+```
+graphql/resovers/sign_in_social.rb
+NameError (uninitialized constant Resolvers::SignInSocial):
+```
 ----
