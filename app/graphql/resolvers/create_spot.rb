@@ -32,8 +32,13 @@ class Resolvers::CreateSpot < GraphQL::Function
     end
 
     def request_address(address)
+<<<<<<< HEAD
       address = address.gsub(' ', '+')
       HTTP.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{address}&key=#{ENV["GOOGLE_MAPS_API_KEY"]}")
+=======
+      address = address.gsub(/\s+/, '+')
+      HTTP.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{address}&key=#{ENV['GOOGLE_MAPS_API_KEY']}")
+>>>>>>> 52fd953a7b3b8e0793e82e4b63194a1a6cc63d6a
     end
 
     def parse_address_response(address_response)
@@ -50,14 +55,14 @@ class Resolvers::CreateSpot < GraphQL::Function
     end
 
     def get_address_component(components, type)
-      component = components.find do |component| 
+      component = components.find do |component|
         component["types"].include?(type)
       end
       component["short_name"]
     end
-    
+
 end
-  
+
   # user: ctx[:current_user]
 # address: {
 #   +    //       street: '1725 Tehama St',
