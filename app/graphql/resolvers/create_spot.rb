@@ -52,7 +52,7 @@ class Resolvers::CreateSpot < GraphQL::Function
       component = components.find do |component|
         component["types"].include?(type)
       end
-      component["short_name"]
+      type == 'locality' ? component['long_name'] : component["short_name"]
     end
 
 end
