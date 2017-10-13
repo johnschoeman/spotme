@@ -148,4 +148,13 @@ NameError (uninitialized constant Resolvers::SignInSocial):
 (byebug) session[:token]
 nil
 
+you can't use graphiql to test persisted session stuff.
+
 ----
+
+on heroku
+```
+[6970c9b6-d5f0-4b01-94af-7d232d0f681a] NameError (uninitialized constant Net::HTTP
+2017-10-13T17:51:34.209449+00:00 app[web.1]: Did you mean?  Http
+2017-10-13T17:51:34.209450+00:00 app[web.1]:                HTTP):
+```

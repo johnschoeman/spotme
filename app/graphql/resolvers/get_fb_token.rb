@@ -1,3 +1,6 @@
+require 'uri'
+require 'net/http'
+
 class FBResponse 
   attr_accessor :id_token
 end
@@ -8,12 +11,21 @@ class Resolvers::GetFBToken < GraphQL::Function
 
   type Types::FBTokenType
 
+  # type do
+  #   name 'FBTokenType'
+  #   field :id_token, types.String
+  # end
+
   def call(_obj, args, _ctx)
     response = request_id_token(args[:authorization_code], args[:redirect_uri])
     id_token = JSON.parse(response.body)["id_token"]
     fb_response = FBResponse.new
     fb_response.id_token = id_token
+    # OpenStruct.new({
+    #   id_token: id_token,
+    # })
     fb_response
+
   end
 
   def request_id_token(authorization_code, redirect_uri)
