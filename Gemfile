@@ -39,7 +39,7 @@ gem 'figaro'
 
 gem 'http'
 gem 'figaro'
-
+gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
