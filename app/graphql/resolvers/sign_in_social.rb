@@ -1,8 +1,8 @@
-class Resolvers::SocialSignin < GraphQL::Function
-  argument :email, !types.string
+class Resolvers::SignInSocial < GraphQL::Function
+  argument :email, !types.String
   
   type do
-    name 'SigninPayload'
+    name 'SigninSocialPayload'
     
     field :token, types.String
     field :user, Types::UserType
@@ -11,8 +11,7 @@ class Resolvers::SocialSignin < GraphQL::Function
   def call(_obj, args, ctx)
     input = args[:email]
     returns unless input
-
-    user = User.find_by email: input[:email]
+    user = User.find_by email: input
 
     return unless user
 

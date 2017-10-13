@@ -10,5 +10,5 @@ Types::MutationType = GraphQL::ObjectType.define do
 
   field :getFBToken, function: Resolvers::GetFBToken.new
   field :createUserSocial, function: Resolvers::CreateUserSocial.new
-  field :signinUserSocial, function: Resolvers::SocialSignin.new
+  field :signInSocial, function: Resolvers::SignInSocial.new
 end
