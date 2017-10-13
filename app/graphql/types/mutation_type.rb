@@ -7,4 +7,6 @@ Types::MutationType = GraphQL::ObjectType.define do
   field :createSpot, function: Resolvers::CreateSpot.new
   field :updateSpot, function: Resolvers::UpdateSpot.new
   field :deleteSpot, function: Resolvers::DeleteSpot.new
+
+  field :getFBToken, function: Resolvers::GetFBToken.new
 end
