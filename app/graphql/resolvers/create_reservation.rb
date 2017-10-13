@@ -13,8 +13,10 @@ class Resolvers::CreateReservation < GraphQL::Function
       spot_id: args[:spot_id],
       user: user
       )
-    end
+  rescue ActiveRecord::RecordInvalid => e
+    GraphQL::ExecutionError.new("Invalid input: #{e.record.full_messages.join(', ')}")
   end
+end
   
   # user: ctx[:current_user],
 
