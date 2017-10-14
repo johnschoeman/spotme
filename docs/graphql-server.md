@@ -28,6 +28,11 @@ is there not a better way to input type arguments?  currently you need to write 
 How do you allow nested types in queries?
 
 ___ 
+
+In apollo client, how do you have nested components make their own queries? how does apollo handle this?
+Why does it seem like one query will overwrite the other?
+
+----
 ### Bugs
 
 Do not forget to set the context of the gql server in the graphql controller.
