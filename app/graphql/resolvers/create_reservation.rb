@@ -7,13 +7,17 @@ class Resolvers::CreateReservation < GraphQL::Function
 
   def call(obj, args, ctx)
     user = User.first
-    reservation = Reservation.create(
+    reservation = Reservation.new(
       start_time: args[:start_time],
       end_time: args[:end_time],
       spot_id: args[:spot_id],
       user: user
       )
-    reservation
+    if reservation.save
+      return reservation
+    else
+      return GraphQL::ExecutionError.new("Invalid input: #{reservation.errors.full_messages.join(', ')}")
+    end
   rescue ActiveRecord::RecordInvalid => e
     GraphQL::ExecutionError.new("Invalid input: #{e.record.full_messages.join(', ')}")
   end
