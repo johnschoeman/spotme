@@ -1,5 +1,5 @@
 class Resolvers::GetSpot < GraphQL::Function
-  argument :spot_id, !types.ID
+  argument :spot_id, !types.Int
 
   type Types::SpotType
 
