@@ -9,8 +9,8 @@ class Resolvers::UpdateReservation < GraphQL::Function
 
   def call(obj, args, ctx)
     reservation = Reservation.find(args[:reservationId])
-    # if ctx[:current_user] == reservation.user
-    if User.first == reservation.user
+    if ctx[:current_user] == reservation.user
+    # if User.first == reservation.user
       params = args.to_h
       params.delete("reservationId")
       if reservation.update( params )
