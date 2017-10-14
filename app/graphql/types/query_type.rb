@@ -19,4 +19,5 @@ Types::QueryType = GraphQL::ObjectType.define do
   # end
 
   field :allSpots, function: Resolvers::SpotsSearch
+  field :allReservations, function: Resolvers::ReservationSearch
 end
