@@ -1,5 +1,5 @@
 class Resolvers::DeleteReservation < GraphQL::Function
-  argument :reservationId, !types.Int
+  argument :reservationId, !types.ID
 
   type Types::ReservationType
 
