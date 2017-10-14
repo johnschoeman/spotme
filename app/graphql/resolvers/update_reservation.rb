@@ -1,9 +1,9 @@
 class Resolvers::UpdateReservation < GraphQL::Function
   argument :reservationId, !types.Int
 
-  argument :spot_id, !types.Int
-  argument :start_time, !Types::DateTimeType
-  argument :end_time, !Types::DateTimeType
+  argument :spot_id, types.Int
+  argument :start_time, Types::DateTimeType
+  argument :end_time, Types::DateTimeType
 
   type Types::ReservationType
 
