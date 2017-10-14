@@ -18,6 +18,8 @@ Types::SpotType = GraphQL::ObjectType.define do
   field :hostedBy, -> { Types::UserType }, property: :user
   field :host_id, types.ID, property: :user_id
 
+  field :reservations, -> { types[Types::ReservationType] }
+
   field :created_at, !Types::DateTimeType
   field :updated_at, !Types::DateTimeType
 end

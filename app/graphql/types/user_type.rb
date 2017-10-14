@@ -28,4 +28,5 @@ Types::UserType = GraphQL::ObjectType.define do
   field :updated_at, Types::DateTimeType
 
   field :spots, -> { types[Types::SpotType] }
+  field :reservations, -> { types[Types::ReservationType] }
 end
