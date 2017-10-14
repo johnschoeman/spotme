@@ -9,14 +9,15 @@ class Resolvers::UpdateReservation < GraphQL::Function
 
   def call(obj, args, ctx)
     reservation = Reservation.find(args[:reservationId])
-    # if ctx[:current_user] == reservation.user
-    if User.first == reservation.user
+    if ctx[:current_user] == reservation.user
+    # if User.first == reservation.user
       params = args.to_h
       params.delete("reservationId")
-      reservation.update(
-        params
-      )
-      return reservation
+      if reservation.update( params )
+        return reservation
+      else
+        return GraphQL::ExecutionError.new("Invalid input: #{reservation.errors.full_messages.join(', ')}")
+      end
     else
       GraphQL::ExecutionError.new("You are not authorized to update this reservation")
     end

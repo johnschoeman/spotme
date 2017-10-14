@@ -19,4 +19,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   # end
 
   field :allSpots, function: Resolvers::SpotsSearch
+
+  field :getSpot, function: Resolvers::GetSpot.new
+  field :getUser, function: Resolvers::GetUser.new
 end

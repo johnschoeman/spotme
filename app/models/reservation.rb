@@ -14,7 +14,7 @@
 class Reservation < ApplicationRecord
   validates :start_time, :end_time, :user_id, :spot_id, presence: true
   validate :start_time_must_come_before_end_time
-  # validate :does_not_overlap_existing_reservation
+  validate :does_not_overlap_existing_reservation
 
   belongs_to :user 
   belongs_to :spot
@@ -25,5 +25,17 @@ class Reservation < ApplicationRecord
     errors[:start_time] << 'must come before end time' if start_time > end_time
   end
 
+  def overlapping_requests
+    Reservation
+      .where.not(id: self.id)
+      .where(spot_id: spot_id)
+      .where.not('start_time > :end_time OR end_time < :start_time',
+                  start_time: start_time, end_time: end_time)
+  end
 
+  def does_not_overlap_existing_reservation
+    unless overlapping_requests.empty?
+      errors[:base] << 'Reservation conflicts with existing reservation'
+    end
+  end
 end
