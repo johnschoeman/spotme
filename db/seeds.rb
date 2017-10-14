@@ -6,15 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Spot.destroy_all
 User.destroy_all
 user_id = []
 5.times do 
-  User.create(email: Faker::Internet.email, password: 'password')
-  user_id.push(User.last.id)
+  user = User.create(email: Faker::Internet.email, password: 'password')
+  user_id.push(user.id)
 end 
 
-Spot.destroy_all
-until Spot.all.length == 50 do
+50.times do
   latitude = "37.#{(781730..782836).to_a.sample}".to_f
   longitude = "-122.#{(491027..495225).to_a.sample}".to_f
   Spot.create(latitude: latitude, longitude: longitude, user_id: user_id.sample)

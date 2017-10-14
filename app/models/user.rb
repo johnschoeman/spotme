@@ -37,8 +37,8 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
 
-  has_many :reservations
-  has_many :spots
+  has_many :reservations, dependent: :destroy
+  has_many :spots, dependent: :destroy
   
   attr_reader :password
 
