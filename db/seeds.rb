@@ -16,8 +16,8 @@ end
 
 s = Spot.new
 s.id = 1
-s.latitude: 37.7857
-s.longitude: -122.4056
+s.latitude = 37.7857
+s.longitude = -122.4056
 s.price = 2.0
 s.rating = 5.0
 s.user_id = user_id.sample
