@@ -24,14 +24,12 @@ class Spot < ApplicationRecord
   belongs_to :user
   has_many :reservations
 
-  def address
-    address_hash = {}
-    address_hash["street"] = self.street
-    address_hash["city"] = self.city
-    address_hash["state"] = self.state
-    address_hash["zip"] = self.zip
-    # debugger
-    return address_hash
+  def self.all_available
+    Spot.all.select { |spot| !spot.currently_reserved }
   end
 
+  def currently_reserved
+    reservations = self.reservations
+    reservations.any? { |reservation| Time.now().between?(reservation.start_time, reservation.end_time)}
+  end
 end
