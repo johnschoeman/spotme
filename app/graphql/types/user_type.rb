@@ -18,7 +18,7 @@ Types::UserType = GraphQL::ObjectType.define do
   name 'User'
 
   field :id, !types.ID
-  field :username, !types.String
+  field :username, types.String
   field :session_token, !types.String
   field :avatar_url, types.String
   field :fb_name, types.String
