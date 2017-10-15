@@ -12,7 +12,7 @@ class Resolvers::CreateUserSocial < GraphQL::Function
       User.create!(
         username: args[:username],
         email: args[:email],
-        email: args[:avatar_url],
+        avatar_url: args[:avatar_url],
         password: password
       )
     else
