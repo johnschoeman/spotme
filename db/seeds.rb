@@ -25,6 +25,6 @@ s.save
 
 20.times do
   latitude = "37.#{(774929..800500).to_a.sample}".to_f
-  longitude = "-122.#{(490027..399999).to_a.sample}".to_f
+  longitude = "-122.#{(399999..490027).to_a.sample}".to_f
   Spot.create(latitude: latitude, longitude: longitude, user_id: user_id.sample, price: [1.50, 2.00, 2.50, 3.00].sample, rating: [3.50, 4.00, 4.50, 5.00].sample)
 end 
