@@ -16,8 +16,8 @@ end
 
 s = Spot.new
 s.id = 1
-s.latitude: 37.7857
-s.longitude: -122.4056
+s.latitude = 37.7857
+s.longitude = -122.4056
 s.price = 2.0
 s.rating = 5.0
 s.user_id = user_id.sample
@@ -25,6 +25,6 @@ s.save
 
 20.times do
   latitude = "37.#{(774929..800500).to_a.sample}".to_f
-  longitude = "-122.#{(490027..399999).to_a.sample}".to_f
+  longitude = "-122.#{(399999..410875).to_a.sample}".to_f
   Spot.create(latitude: latitude, longitude: longitude, user_id: user_id.sample, price: [1.50, 2.00, 2.50, 3.00].sample, rating: [3.50, 4.00, 4.50, 5.00].sample)
 end 
