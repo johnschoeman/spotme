@@ -25,7 +25,8 @@ class Spot < ApplicationRecord
   has_many :reservations
 
   def self.all_available
-    Spot.all.select { |spot| !spot.currently_reserved }
+    availableSpots = Spot.all.select { |spot| !spot.currently_reserved }
+    Spot.where(id: availableSpots.map(&:id))
   end
 
   def currently_reserved
