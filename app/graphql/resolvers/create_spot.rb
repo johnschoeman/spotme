@@ -10,6 +10,7 @@ class Resolvers::CreateSpot < GraphQL::Function
   type Types::SpotType
 
   def call(obj, args, ctx)
+    # address = args[:address] ? args[:address] : {}
     address_response = request_address(args[:address])
     address_hash = parse_address_response(address_response)
     Spot.create!(
