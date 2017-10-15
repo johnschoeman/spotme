@@ -1,7 +1,5 @@
 class Resolvers::CreateUserSocial < GraphQL::Function
   argument :email, !types.String
-  argument :avatar_url, types.String
-  argument :username, types.String
 
   type Types::UserType
 
@@ -12,7 +10,6 @@ class Resolvers::CreateUserSocial < GraphQL::Function
       User.create!(
         username: args[:username],
         email: args[:email],
-        avatar_url: args[:avatar_url],
         password: password
       )
     else
