@@ -9,21 +9,29 @@ require 'http'
 
 Spot.destroy_all
 User.destroy_all
-user_id = []
-5.times do 
+
+
+# Create Demo user
+demo_user = User.create(
+  email: 'anonymous_alien@gmail.com',
+  password: 'password'
+)
+user_id = [demo_user.id]
+
+5.times do
   user = User.create(email: Faker::Internet.email, password: 'password')
   user_id.push(user.id)
-end 
+end
 
 # 20.times do
 #   latitude = "37.#{(774929..800500).to_a.sample}".to_f
 #   longitude = "-122.#{(399999..490027).to_a.sample}".to_f
-#   Spot.create(latitude: latitude, 
-#               longitude: longitude, 
-#               user_id: user_id.sample, 
-              # price: [1.50, 2.00, 2.50, 3.00].sample, 
+#   Spot.create(latitude: latitude,
+#               longitude: longitude,
+#               user_id: user_id.sample,
+              # price: [1.50, 2.00, 2.50, 3.00].sample,
               # rating: [3.50, 4.00, 4.50, 5.00].sample)
-# end 
+# end
 
 addresses = [
   "825 battery st, sf, ca",
