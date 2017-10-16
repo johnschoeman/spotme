@@ -3,7 +3,7 @@ require 'search_object/plugin/graphql'
 class Resolvers::SpotsSearch
   include SearchObject.module(:graphql)
 
-  scope { Spot.all }
+  scope { Spot.all_available }
 
   type !types[Types::SpotType]
 
