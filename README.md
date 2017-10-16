@@ -2,10 +2,10 @@
 
  A mobile application where people can rent out private parking spaces, similar to AirBnb. Users searching for parking in an area can use the application to reserve available spots near them.
 
-### Functionality & Minimum Viable Product
+### Functionality
 
-#### Parkers
-- Authentication
+#### Users
+- Authentication - OAuth with Facebook
 - User CRUD
 - Users can see nearby available spots live (Google maps API)
 - User can make reservations (Reservation CRUD)
@@ -13,10 +13,9 @@
 #### Hosts
 - Hosts can create Parking Spots with white listed times (ParkingSpot CRUD)
 
-### Bonus
 
 #### Parkers
-- OAuth Login (regular sign up auth as a backup if failed to accomplish oauth)
+- OAuth Login 
 - Users can search for nearby available spots for specified date/times/features
 - Users can filter by price, features, etc
 - Can pay hosts
@@ -35,57 +34,47 @@
 - Hosts can see average price in their area
 - Hosts get push notifications when users request reservation for their spot
 
-## Design Documents
+## Feature Demo
 
-### Wireframes
+### FB Login
 
-- SplashPage
+![fb_login](https://res.cloudinary.com/dekgrddbo/image/upload/v1508124220/spot_me/fb_login.gif)
 
-  ![SplashPage](http://res.cloudinary.com/ddgt25kwb/image/upload/v1507495089/flex/Logged-off-home_irlmqe.png)
+### Reserving a Spot
 
-- Login
+![reserve_spot](https://cloudinary.com/console/media_library#/dialog/image/upload/spot_me%2Freserve_spot_4)
 
-  ![Login](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495089/flex/Logged-off-login_neo5ze.png)
+### Creating a Spot
 
-- Find Stop Page (Stop Index with map)
+![create_spot](https://res.cloudinary.com/dekgrddbo/image/upload/v1508124226/spot_me/create_spot.gif)
 
-  ![homepage](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495089/flex/Logged-in-home_kqfshq.png)
+### Holding a Spot
 
-- Host spots index (Index)
-
-  ![stop index](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495090/flex/Logged-in-share_qxmxey.png)
-
-- Create Page (Create form)
-
-  ![create stop](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495090/flex/Logged-in-share-form_z8v41t.png)
-
-- User Profile Page
-
-  ![user profile info](https://res.cloudinary.com/ddgt25kwb/image/upload/v1507495089/flex/Logged-in-profile_vaktp7.png)
+![hold_spot](https://res.cloudinary.com/dekgrddbo/image/upload/v1508124223/spot_me/hold_spot.gif)
 
 ## Group Members & Work Breakdown
 
 Our group consists of four members: Drew Stonebraker, Jose Moreno, Eric Tung, John Schoeman
 
-Drew's primary responsiblities will be:
+Drew's primary responsiblities were:
 * Owning Expo + React Native implementation and dependencies
 * React Native Content Developemnt
 * Owning styling implementation of app
 * Owning Reservation functionality (Front End)
 
-Jose's primary responsiblities will be:
+Jose's primary responsiblities were:
 * Co-chair OAuth implementation in React Native, graphcool, rails back end
 * React Native Content Developemnt
 * Owning Google Map API implementation (Front End and Back End)
 * Owning Create Spot functionality (Front End)
 
-Eric's primary responsiblities will be:
+Eric's primary responsiblities were:
 * Co-chair OAuth implementation in React Native, graphcool, rails back end
 * React Native Content Developemnt
 * Owning Reservation functionality (Back End)
 * Owning Demo page creatation (Back End)
 
-John's primary responsiblities will be:
+John's primary responsiblities were:
 * Implementing Apollo Client in React Native (Front End)
 * Managing Graphcool backend as a service for front end developement
 * Implementing a GraphQL data layer on Rails (Back End)
@@ -96,14 +85,13 @@ John's primary responsiblities will be:
 
 This mobile iOS applicaiton will be built using the following technologies:
 
-- React Native 0.42.3- mobile implementation
-- Expo v15.0
-- ReactJS v15 - desktop implementation for demo page
+- React Native 0.49- mobile implementation
+- Expo v21.0
+- ReactJS v16 - desktop implementation for demo page
 - GraphQL data layer in Rails
-- Apollo Client v1.2 running on React Navtive
+- Apollo Client v1.4 running on React Navtive
 - Ruby on Rails v5
 - PostgreSQL
-- AWS
 
 Techincal challenges include:
  - Incorporation of two new technologies React Native and GraphQL
@@ -112,75 +100,25 @@ Techincal challenges include:
 ## Technology Details
 
 [React Native](https://facebook.github.io/react-native/)
-- React Native is the mobile implementation of react.
+
+Through React Native we were able to write code for both iOS and Android devices. Also with the large community of developers using React Native we were able to gain inspiration from other projects. With Redux we were able to keep track of a persistant store throughout the application.
 
 [Expo](https://expo.io/)
-- Expo is a developement and deployment platform for react native apps.
 
-[ReactJS](https://reactjs.org/)
-- Its react.
+We used Expo Client as a development platform to build our mobile application. This allow us to develop for both native iOS applications as well as Android mobile application at the same time as well as provided for easier deployment.
 
 [Apollo Client](http://dev.apollodata.com/)
-- A front end graphql network client for interacting with graphql endpoint.
+
+Our team used Apollo Client to interact with our GraphQL endpoint from our React Native mobile application. Apollo provides an abstracted network interface layer built on our front end to handle our application’s network request and response cycle. We choose to use Apollo because of the numerous optimizations and features Apollo utilizes, including data caching, subscriptions, and higher order UI components that are connected to the network interface. Our implementation of Apollo allowed us to take full advantage of the benefits of the GraphQL specification and sped up our development process.
 
 [GraphQL](http://graphql.org/)
-- An alternative to restful apis.  GraphQL provides a data layer and query language which allows for clients to request data from a single endpoint.
+
+To serve user data to the front end application, we wrote a GraphQL server built on ruby to act as a data layer over our rails backend, as an alternative to a more traditional RESTful API. We made this design choice because we knew that we were going to be building primarily in a native mobile environment where both efficiency in data fetching and flexibility in UI design are at a premium. Instead of having many rigid API endpoints that serve a fixed set of data, GraphQL allows for a single flexible endpoint with a powerful querying language accessible to client applications, effectively eliminating problems of over fetching or under fetching of data. This also allowed for uninhibited iteration of the front end without delay from any prerequisite modification of the backend, greatly increasing development speed of the application. The use GraphQL on the back end allowed us have a more performant and extensible application.
 
 [Ruby on Rails](http://rubyonrails.org/)
-- A MVC framework to build the backends of applications.
+
+We used Ruby on Rails for our backend framework due to the fact that we valued convention over configuration. Through Rails we were able to create API endpoints to interact with out React Native front end. We created a secure encrypted authentication feature with BCrypt alongside Oauth implementation with Auth0.
 
 [PostgreSQL](https://www.postgresql.org/)
-- A RDBMS.
 
-[AWS](https://aws.amazon.com/)
-- Cloud based computing and data storage services.
-
-## Thing Accomplished over the weekend
-
-- Successfully initializing a new react native app with expo
-- Researching and familiarizing the group with a stable react native dependency tree
-- Successfully quering a GraphQL DB with react native using apollo client
-- Successfully writing to a GraphQL DB with react native using apoll client
-- Deeply researching OAuth
-- Setting up a rails back end with basic authentication.
-- Setting up a graphcool DB as a service back end for initial development
-
-## Implementation Timeline
-
-#### Phase 1: Learn Technologies (2days)
-- Objective: over the weekend all members will research and understand the new technologies of React Native and GraphQL and become familiar of the overall workflow.
-- By the end of Sunday we will have:
-  - A completed proposal readme - John
-  - An understanding Of React Native and GraphQL - ALL
-  - A working (though lacking features) React Native App with Apollo Client with basic read and write abilites to a graphcool backend - Drew and John
-  - An understanding of how to implement OAuth with react native and graphql - Eric and Jose
-
-#### Phase 2: Backbone (3days)
-- Objective have a working basic app with full user authentication, basic page navigation, connection to rails backend with graphql server acting as a data layer.
-- Phase 2a:
-  - Have Authentication completed via React Native and Auth0 API - Eric and Jose
-  - Users can sign up/login and have sessions persist unless logged out - Eric and Jose
-- Phase 2b:
-  - Have basic page navigation - Drew
-  - Users can access spot creation form, spot index form, make reservation form pages. - Drew
-- Phase 2c:
-  - Have a graphql end point available from rails backend - John
-  - have the ability to read and write to the backend database - John
-
-#### Phase 3: MVP Features (4days)
-- Objective have a working mvp app with spot crud, resevation crud, and sufficient styling.
-- Phase 3a:
-  - Have Spot Creation Feature Completed - Drew
-  - Users and input spot data into a form and have the data persist to the DB - Eric
-- Phase 3b:
-  - Have Spot Index Feature Completed - John
-  - Users and see all nearby spots on a Google map - Jose
-- Phase 3c:
-  - Have Reservation Feature Completed - TBD
-  - Users can select a spot and time and reserve a spot. -TBD
-
-## Plan for getting users and reviews
-
-- all members will share app with at least 20 friends and family members.
-- John will post in an appropriate sub-reddit and Product Hunt for exposure.
-- Drew and Eric will submit the app for review on the App Store.
+Postgre is the relational database management system our team used to provide end users persisted data. PostgreSQL is a robust and greatly optimized technology that allows for highly relational data and database level protections against corrupted data. PostgreSQL was chosen by our team because it has an extensive track record as an extremely effective database technology as well as being well integrated with heroku, our preferred hosting provider for our back end application.
