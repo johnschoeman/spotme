@@ -1,6 +1,29 @@
 # Spot Me
 
+![logo](https://github.com/johnschoeman/spotme/blob/master/docs/icons/spotme_logo.png)
+
  A mobile application where people can rent out private parking spaces, similar to AirBnb. Users searching for parking in an area can use the application to reserve available spots near them.
+
+Vist the demo page here:
+ [Live Demo](https://aldahir15.github.io/SpotMeApp/)
+
+## Feature Demo
+
+### FB Login
+
+![fb_login](https://res.cloudinary.com/dekgrddbo/image/upload/v1508124220/spot_me/fb_login.gif)
+
+### Reserving a Spot
+
+![reserve_spot](https://cloudinary.com/console/media_library#/dialog/image/upload/spot_me%2Freserve_spot_4)
+
+### Creating a Spot
+
+![create_spot](https://res.cloudinary.com/dekgrddbo/image/upload/v1508124226/spot_me/create_spot.gif)
+
+### Holding a Spot
+
+![hold_spot](https://res.cloudinary.com/dekgrddbo/image/upload/v1508124223/spot_me/hold_spot.gif)
 
 ### Functionality
 
@@ -34,24 +57,6 @@
 - Hosts can see average price in their area
 - Hosts get push notifications when users request reservation for their spot
 
-## Feature Demo
-
-### FB Login
-
-![fb_login](https://res.cloudinary.com/dekgrddbo/image/upload/v1508124220/spot_me/fb_login.gif)
-
-### Reserving a Spot
-
-![reserve_spot](https://cloudinary.com/console/media_library#/dialog/image/upload/spot_me%2Freserve_spot_4)
-
-### Creating a Spot
-
-![create_spot](https://res.cloudinary.com/dekgrddbo/image/upload/v1508124226/spot_me/create_spot.gif)
-
-### Holding a Spot
-
-![hold_spot](https://res.cloudinary.com/dekgrddbo/image/upload/v1508124223/spot_me/hold_spot.gif)
-
 ## Group Members & Work Breakdown
 
 Our group consists of four members: Drew Stonebraker, Jose Moreno, Eric Tung, John Schoeman
@@ -76,7 +81,7 @@ Eric's primary responsiblities were:
 
 John's primary responsiblities were:
 * Implementing Apollo Client in React Native (Front End)
-* Managing Graphcool backend as a service for front end developement
+* Managing Graphcool backend as a service for front end developement and testing
 * Implementing a GraphQL data layer on Rails (Back End)
 * Owning Create Spot functionality (Back End)
 * Owning Demo page creatation (Front End)
@@ -87,13 +92,12 @@ This mobile iOS applicaiton will be built using the following technologies:
 
 - React Native 0.49- mobile implementation
 - Expo v21.0
-- ReactJS v16 - desktop implementation for demo page
 - GraphQL data layer in Rails
 - Apollo Client v1.4 running on React Navtive
 - Ruby on Rails v5
 - PostgreSQL
 
-Techincal challenges include:
+Techincal challenges included:
  - Incorporation of two new technologies React Native and GraphQL
  - Learning to navigate the iOS native ecosystem
 
