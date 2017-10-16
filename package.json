@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "graphql-playground": "^1.0.8"
+    "graphql-playground": "^1.0.8",
+    "react-timer-mixin": "^0.13.3"
   }
 }
