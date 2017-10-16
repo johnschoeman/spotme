@@ -13,6 +13,17 @@ class Resolvers::CreateSpot < GraphQL::Function
     # address = args[:address] ? args[:address] : {}
     address_response = request_address(args[:address])
     address_hash = parse_address_response(address_response)
+
+    if args[:image_url].nil?
+      args[:image_url] = "http://res.cloudinary.com/ddgt25kwb/image/upload/v1507653351/garage-spot_bcnnyu.jpg"
+    end
+    if args[:rating].nil?
+      args[:rating] = 5.0
+    end
+    if args[:rating].nil?
+      spot.price = 2.5
+    end
+
     Spot.create!(
       latitude: address_hash[:latitude],
       longitude: address_hash[:longitude],
