@@ -57,13 +57,19 @@ image_url = [
   "https://res.cloudinary.com/dekgrddbo/image/upload/v1508105245/parking_spots/Residential-Driveway.jpg",
   "https://res.cloudinary.com/dekgrddbo/image/upload/v1508105258/parking_spots/CobblestonePaverDriveway-GettyImages-83116815-58f639a85f9b581d59e6d03b.jpg",
   "https://res.cloudinary.com/dekgrddbo/image/upload/v1508105270/parking_spots/Driveways-Concrete.jpg.jpg",
-  "https://res.cloudinary.com/dekgrddbo/image/upload/v1508105287/parking_spots/20101201_ExposedDriveway.jpg",
-  "https://res.cloudinary.com/dekgrddbo/image/upload/v1508105299/parking_spots/cc7a911af7587bec74fefd1efd3b9849--gravel-driveway-diy-driveway.jpg",
-  "https://res.cloudinary.com/dekgrddbo/image/upload/v1508105318/parking_spots/BrookfieldHouse_023-e1423451943273-320x252.jpg",
   "https://res.cloudinary.com/dekgrddbo/image/upload/v1508105330/parking_spots/6532b4d8e06e9ae0bd5c490b748a1368--driveway-landscaping-driveway-design.jpg",
   "https://res.cloudinary.com/dekgrddbo/image/upload/v1508105349/parking_spots/043a654887548a0016ed7d4cc39c2665.jpg",
   "https://res.cloudinary.com/dekgrddbo/image/upload/v1508105379/parking_spots/parking-spot-from-above-with-spots.jpg",
-  "https://res.cloudinary.com/dekgrddbo/image/upload/v1508105401/parking_spots/2015-03-27-19.39.37.jpg"
+  "https://res.cloudinary.com/dekgrddbo/image/upload/v1508105401/parking_spots/2015-03-27-19.39.37.jpg",
+  "https://res.cloudinary.com/dekgrddbo/image/upload/v1508118964/parking_spots/tandem.jpg",
+  "https://res.cloudinary.com/dekgrddbo/image/upload/v1508119040/parking_spots/63_Woodstock_Ave._4.jpg",
+  "https://res.cloudinary.com/dekgrddbo/image/upload/v1508119074/parking_spots/oddest-parking-spot-in-denver-495x371.jpg",
+  "https://res.cloudinary.com/dekgrddbo/image/upload/v1508119092/parking_spots/downtown-690827_1920.jpg",
+  "https://res.cloudinary.com/dekgrddbo/image/upload/v1508119123/parking_spots/Homepage_Find_a_Spot_section2.jpg",
+  "https://res.cloudinary.com/dekgrddbo/image/upload/v1508119140/parking_spots/article-2184174-005AF28B00000258-584_468x269.jpg",
+  "https://res.cloudinary.com/dekgrddbo/image/upload/v1508119170/parking_spots/IMG_0404-1024x683.jpg",
+  "https://res.cloudinary.com/dekgrddbo/image/upload/v1508119194/parking_spots/hell-angels.jpg",
+  "https://res.cloudinary.com/dekgrddbo/image/upload/v1508119281/parking_spots/iStock_000012218495_Large-1.jpg"
 ]
 
 def create_spot(args, user_id, image_url)
