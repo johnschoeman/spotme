@@ -72,14 +72,15 @@ image_url = [
   "https://res.cloudinary.com/dekgrddbo/image/upload/v1508119281/parking_spots/iStock_000012218495_Large-1.jpg"
 ]
 
-def create_spot(args, user_id, image_url)
+def create_spot(args, user_id, image_url, image_count)
+
   address_response = request_address(args[:address])
   address_hash = parse_address_response(address_response)
   Spot.create!(
     latitude: address_hash[:latitude],
     longitude: address_hash[:longitude],
     title: args[:title],
-    image_url: image_url.sample,
+    image_url: image_url[image_count],
     rating: [3.50, 4.00, 4.50, 5.00].sample,
     price: [1.50, 2.00, 2.50, 3.00].sample,
     description: args[:description],
@@ -117,6 +118,10 @@ def create_spot(args, user_id, image_url)
     type == 'locality' ? component['long_name'] : component["short_name"]
   end
 
-  addresses.each do |address|
-    create_spot({address: address}, user_id, image_url)
+  addresses.each_with_index do |address, idx|
+    create_spot({address: address}, user_id, image_url, idx)
   end
+
+  tehama = Spot.find_by(street: "Tehama St")
+  tehama.rating = 1.0
+  tehama.save
