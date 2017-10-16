@@ -33,6 +33,10 @@ class Reservation < ApplicationRecord
                   start_time: start_time, end_time: end_time)
   end
 
+  def duration
+    self.end_time - self.start_time
+  end
+  
   def does_not_overlap_existing_reservation
     unless overlapping_requests.empty?
       errors[:base] << 'Reservation conflicts with existing reservation'
