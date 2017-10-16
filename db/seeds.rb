@@ -118,8 +118,10 @@ def create_spot(args, user_id, image_url, image_count)
     type == 'locality' ? component['long_name'] : component["short_name"]
   end
 
-  addresses.each_with_index do |address, idx|
-    create_spot({address: address}, user_id, image_url, idx)
+  count = 0
+  addresses.each_with_index do |address|
+    count = (count + 1) % image_url.length
+    create_spot({address: address}, user_id, image_url, count)
   end
 
   tehama = Spot.find_by(street: "Tehama St")
