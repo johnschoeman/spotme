@@ -8,5 +8,5 @@ Types::ReservationType = GraphQL::ObjectType.define do
   field :spot, -> { !Types::SpotType }
   field :created_at, !Types::DateTimeType
   field :updated_at, !Types::DateTimeType
-  field :duration, Types::DateTimeType
+  field :duration, Types::Float
 end
