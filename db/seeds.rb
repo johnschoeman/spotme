@@ -23,20 +23,10 @@ user_id = [demo_user.id]
   user_id.push(user.id)
 end
 
-# 20.times do
-#   latitude = "37.#{(774929..800500).to_a.sample}".to_f
-#   longitude = "-122.#{(399999..490027).to_a.sample}".to_f
-#   Spot.create(latitude: latitude,
-#               longitude: longitude,
-#               user_id: user_id.sample,
-              # price: [1.50, 2.00, 2.50, 3.00].sample,
-              # rating: [3.50, 4.00, 4.50, 5.00].sample)
-# end
-
 addresses = [
   "825 battery st, sf, ca",
   "160 spear st, sf, ca",
-  "425 tehama st, sf, ca",
+  "431 tehama st, sf, ca",
   "600 Montgomery St, sf, ca, 94111",
   "916 kearny st, sf, ca, 94133",
   "1 telegraph hill blvd, sf, ca, 94133",
