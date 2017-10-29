@@ -5,7 +5,11 @@ Types::SpotType = GraphQL::ObjectType.define do
   field :latitude, !types.Float
   field :longitude, !types.Float
   field :title, types.String
-  field :image_url, types.String
+  field :image_url, types.String do
+    resolve ->(spot, _args, _ctx) {
+      spot.image.url
+    }
+  end
   field :rating, types.Float
   field :price, types.Float
   field :description, types.String
